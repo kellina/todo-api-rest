@@ -1,0 +1,29 @@
+{
+    "name": "todo-backend",
+    "version": "1.0.0",
+    "description": "To Do Rest Api",
+    "main": "src/server.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "start": "cross-env DEBUG=server,task nodemon src/server.js"
+    },
+    "keywords": [
+        "backend",
+        "todo",
+        "rest",
+        "api"
+    ],
+    "author": "kellina@gmail.com",
+    "license": "MIT",
+    "dependencies": {
+        "body-parser": "^1.19.0",
+        "cross-env": "^7.0.2",
+        "debug": "^4.1.1",
+        "dot-env": "0.0.1",
+        "express": "^4.17.1",
+        "postgres": "^1.0.2"
+    },
+    "devDependencies": {
+        "nodemon": "^2.0.4"
+    }
+}
