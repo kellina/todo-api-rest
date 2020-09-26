@@ -12,13 +12,42 @@ const todoRouter = (app) => {
         res.json(tasks)
     })
 
-    app.post('/todo', (req, res) => {
+    app.post('/todo', async(req, res) => {
         debug('Creating a todo')
         const { description } = req.body
-        sql `
+        const [task] = await sql `
             INSERT INTO tasks (description, done) VALUES (${description}, false)
+
+            returning *
         `
+        res.status(201).json(task)
         debug(`Todo ${description} created`)
+    })
+
+    app.put('/todo/:id', async(req, res) => {
+        const { description, done } = req.body
+        const { id } = req.params
+        const [task] = await sql `
+            UPDATE tasks SET
+                description = ${description},
+                done = ${done}
+            WHERE id = ${id}
+
+            returning *
+        `
+        res.json(task)
+    })
+
+    app.delete('/todo/:id', async(req, res) => {
+        const { id } = req.params
+        const [task] = await sql `
+            DELETE FROM tasks
+            WHERE id = ${id}
+
+            returning *
+        `
+
+        res.json(task)
     })
 }
 
