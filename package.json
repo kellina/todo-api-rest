@@ -2,10 +2,10 @@
     "name": "todo-backend",
     "version": "1.0.0",
     "description": "To Do Rest Api",
-    "main": "src/server.js",
+    "main": "src/server-starter.js",
     "scripts": {
-        "test": "echo \"Error: no test specified\" && exit 1",
-        "start": "cross-env DEBUG=server,task nodemon src/server.js"
+        "test": "jest --detectOpenHandles",
+        "start": "cross-env DEBUG=server,task nodemon src/server-starter.js"
     },
     "keywords": [
         "backend",
@@ -17,6 +17,7 @@
     "license": "MIT",
     "dependencies": {
         "body-parser": "^1.19.0",
+        "cors": "^2.8.5",
         "cross-env": "^7.0.2",
         "debug": "^4.1.1",
         "dot-env": "0.0.1",
@@ -25,6 +26,8 @@
         "swagger-ui-express": "^4.1.4"
     },
     "devDependencies": {
-        "nodemon": "^2.0.4"
+        "jest": "^26.6.0",
+        "nodemon": "^2.0.4",
+        "supertest": "^5.0.0"
     }
 }
