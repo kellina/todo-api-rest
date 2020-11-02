@@ -5,7 +5,7 @@ const sql = postgres('postgres://kellina:2733@localhost:5432/todo')
 const todoRouter = (app) => {
     app.get('/todo', async(req, res) => {
         const tasks = await sql `
-            SELECT id, description, done FROM tasks
+            SELECT id, description, done FROM tasks ORDER BY done
         `
         debug(`${tasks.length} todos founded`)
 
