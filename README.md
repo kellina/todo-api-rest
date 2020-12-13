@@ -31,3 +31,5 @@ npm start
 ## Swagger
 
 The swagger documentation for this application is at: http://localhost:8080
+
+![Swagger](https://raw.githubusercontent.com/kellina/todo-api-rest/master/assets/swagger.png)
