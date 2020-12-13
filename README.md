@@ -2,18 +2,12 @@
 
 > ToDo Rest Api that creates, changes, lists, and deletes tasks.
 
- 
-## Overview
-
-A reference to the functionality our public API provides with detailed description of each API endpoint, parameters, and examples.
-
-
 ## Install
 
-É necessário fazer instalação do banco postgesql antes de instalar a aplicação.
-Este [tutorial](https://www.digitalocean.com/community/tutorials/how-to-install-and-use-postgresql-on-ubuntu-20-04-pt) poderá te ajudar.
+It is necessary to install the PostgreSQL database before installing the application.
+This [tutorial](https://www.digitalocean.com/community/tutorials/how-to-install-and-use-postgresql-on-ubuntu-20-04-pt) can help you.
 
-Clone o repositorio e instale as depedencias
+Clone the repository and install the dependencies
 
 ```bash
 git clone git@github.com:kellina/todo-api-rest.git
@@ -21,14 +15,14 @@ cd todo-api-rest
 npm install
 ```
 
-Crie um arquivo `.env` na raiz do projeto com as seguintes variaveis de ambiente:
+Create a `.env` file at the root of the project with the following environment variables:
 
 ```
 DATABASE_URL= postgres://dbuser:password@localhost:port/dbname
 PORT=8080
 ```
 
-Inicie a aplicação com:
+Start the application with:
 
 ```bash
 npm start
@@ -36,4 +30,4 @@ npm start
 
 ## Swagger
 
-A documentação swagger desta aplicação está no: http://localhost:8080/
+The swagger documentation for this application is at: http://localhost:8080
