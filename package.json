@@ -5,7 +5,7 @@
     "main": "src/server-starter.js",
     "scripts": {
         "test": "jest --detectOpenHandles",
-        "start": "cross-env DEBUG=server,task nodemon src/server-starter.js"
+        "start": "cross-env DEBUG=server-starter,server,task,dbconn nodemon src/server-starter.js"
     },
     "keywords": [
         "backend",
@@ -21,6 +21,7 @@
         "cross-env": "^7.0.2",
         "debug": "^4.1.1",
         "dot-env": "0.0.1",
+        "dotenv": "^8.2.0",
         "express": "^4.17.1",
         "postgres": "^1.0.2",
         "swagger-ui-express": "^4.1.4"

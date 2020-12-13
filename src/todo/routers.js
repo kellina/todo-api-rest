@@ -1,6 +1,6 @@
-const postgres = require('postgres')
+const sql = require('./dbconn')
 const debug = require('debug')('task')
-const sql = postgres('postgres://kellina:2733@localhost:5432/todo')
+
 
 const todoRouter = (app) => {
     app.get('/todo', async(req, res) => {

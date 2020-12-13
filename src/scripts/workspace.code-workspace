@@ -1,0 +1,13 @@
+{
+	"folders": [
+		{
+			"path": "../../../todo-frontend"
+		},
+		{
+			"path": "../.."
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "todo-frontend"
+	}
+}
