@@ -5,7 +5,7 @@
     "main": "src/server-starter.js",
     "scripts": {
         "test": "jest --detectOpenHandles",
-        "start": "cross-env DEBUG=server-starter,server,task,dbconn nodemon src/server-starter.js"
+        "start": "cross-env DEBUG=server-starter,server,task,dbconn node src/server-starter.js"
     },
     "keywords": [
         "backend",
