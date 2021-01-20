@@ -1,17 +1,6 @@
-const express = require('express') // importa modulo que retorna uma f. construtora
-const bodyParser = require('body-parser')
-const cors = require('cors')
-const swaggerUi = require('swagger-ui-express');
-const swaggerDocument = require('./swagger.json');
-const todoRouter = require('./todo/routers')
+const app = require('./app');
+const debug = require('debug')('server')
 
-const app = express()
-
-app.use(bodyParser.json()) //habiliata express entender o json do body da requisição (qdo tiver)
-    .use(cors()) //permite que recursos restritos em uma página da web sejam recuperados por outro domínio de fora ao qual pertence o recurso que será recuperado.
-
-todoRouter(app)
-    
-app.use('/', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
-
-module.exports = app
+app.listen(process.env.PORT, () => {
+        debug('Pronto para receber conexões na porta %s.', process.env.PORT)
+    }) //cria servidor web e chama a função callbackc

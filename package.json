@@ -2,10 +2,11 @@
     "name": "todo-backend",
     "version": "1.0.0",
     "description": "To Do Rest Api",
-    "main": "src/server-starter.js",
+    "main": "src/server.js",
     "scripts": {
-        "test": "jest --detectOpenHandles",
-        "start": "cross-env DEBUG=server-starter,server,task,dbconn node src/server-starter.js"
+        "test": "jest --detectOpenHandles --collect-coverage",
+        "test-ci": "jest --ci --detectOpenHandles --collect-coverage",
+        "start": "cross-env DEBUG=server,app,task,dbconn node src/server.js"
     },
     "keywords": [
         "backend",
