@@ -8,6 +8,8 @@ cache: npm
 
 install:
   - npm install
+  - npm -g install codecov
 
 script:
   - npm run test-ci
+  - codecov
