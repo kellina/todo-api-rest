@@ -1,4 +1,4 @@
-# Todo-api-rest ![GitHub](https://img.shields.io/github/license/kellina/todo-api-rest) ![GitHub package.json dependency version (prod)](https://img.shields.io/github/package-json/dependency-version/kellina/todo-api-rest/express) [![Heroku App Status](http://heroku-shields.herokuapp.com/kel-todo-backend)](https://kel-todo-backend.herokuapp.com)
+# Todo-api-rest ![GitHub](https://img.shields.io/github/license/kellina/todo-api-rest) ![GitHub package.json dependency version (prod)](https://img.shields.io/github/package-json/dependency-version/kellina/todo-api-rest/express) [![Heroku App Status](http://heroku-shields.herokuapp.com/kel-todo-backend)](https://kel-todo-backend.herokuapp.com) [![Build Status](https://travis-ci.com/kellina/todo-api-rest.svg?branch=master)](https://travis-ci.com/kellina/todo-api-rest)
 
 > ToDo Rest Api that creates, changes, lists, and deletes tasks.
 
