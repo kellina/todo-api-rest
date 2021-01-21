@@ -1,17 +1,24 @@
 language: node_js
 node_js:
-- 13
-- 14
-- 15
+  - 13
+  - 14
+  - 15
 cache: npm
 install:
-- npm install
-- npm -g install codecov
+  - npm install
+  - npm -g install codecov
 script:
-- npm run test-ci
-- codecov
-deploy:
-  provider: heroku
-  app: kel-todo-backend
-  api_key:
-    secure: u5e9Qb4exOdEb4z36RVjqwaUl46RkyMtA3hDm8wv/Ex2N/pBhAbYiG6cGrLM7HudTyZ4JFuh052hR/Ha06DKNnOcbJ9lEqnNdx3Mh8m0kEjR5fMFQ5dgPCqunC0F9pDMNq5fUwDPs4OceS/7RSlqV59ninhjSCpdLtyO8SLf7L9yNf8YYuXL3y8rE7h0Thmz+rKAh7I8iAyMM+xVsCabN7M9HwIOG5ZleyfXuJeZZ5f3+5a4RguxA8vBv8INiT7iQJdpYgHF2FLHJWYK0DZDcqpTmrX+fopD4DRr8+0ppXa6RbbARr4ZaXgxVgQOl/PEpPHBkOyhg44wOVhHiG32Nu+coDpC6xmuC1GadZofYfQFZwJbJk/tkus3ZOZl1XdReNH9yXj949Mlv3O7x3tQ10IV5QlhEjI3y0ftr3l4YYB9s0XHIHM0EWDIgoE3QsYQkLKcusdhqGBdWqb4rzxKB1rGe/iSDA/zXWvQ3V79mM66x3Q3lMs9ES/cd//xnYrFHam+8wnZHDlcm+6P3Fd3en2oxrWb46Ti34yla0Ofm6sfdCszD+WLND+5Kz3NbPyoy0zZfrdBQIvwAZeGksft2a1D9RKUFwjaKwQndQw+KV1xq3RrZWIPpjKpNwxIIhF1VuqQrxr2jonHK5S7PozocT9T/NDIXwNeNfnhvkLoUZQ=
+  - npm run test-ci
+  - codecov
+
+jobs:
+  include:
+    - stage: heroku deploy
+      node_js: '14'
+      deploy:
+        provider: heroku
+        on:
+          node_js: '14'
+        app: kel-todo-backend
+        api_key:
+          secure: u5e9Qb4exOdEb4z36RVjqwaUl46RkyMtA3hDm8wv/Ex2N/pBhAbYiG6cGrLM7HudTyZ4JFuh052hR/Ha06DKNnOcbJ9lEqnNdx3Mh8m0kEjR5fMFQ5dgPCqunC0F9pDMNq5fUwDPs4OceS/7RSlqV59ninhjSCpdLtyO8SLf7L9yNf8YYuXL3y8rE7h0Thmz+rKAh7I8iAyMM+xVsCabN7M9HwIOG5ZleyfXuJeZZ5f3+5a4RguxA8vBv8INiT7iQJdpYgHF2FLHJWYK0DZDcqpTmrX+fopD4DRr8+0ppXa6RbbARr4ZaXgxVgQOl/PEpPHBkOyhg44wOVhHiG32Nu+coDpC6xmuC1GadZofYfQFZwJbJk/tkus3ZOZl1XdReNH9yXj949Mlv3O7x3tQ10IV5QlhEjI3y0ftr3l4YYB9s0XHIHM0EWDIgoE3QsYQkLKcusdhqGBdWqb4rzxKB1rGe/iSDA/zXWvQ3V79mM66x3Q3lMs9ES/cd//xnYrFHam+8wnZHDlcm+6P3Fd3en2oxrWb46Ti34yla0Ofm6sfdCszD+WLND+5Kz3NbPyoy0zZfrdBQIvwAZeGksft2a1D9RKUFwjaKwQndQw+KV1xq3RrZWIPpjKpNwxIIhF1VuqQrxr2jonHK5S7PozocT9T/NDIXwNeNfnhvkLoUZQ=
