@@ -9,10 +9,13 @@ install:
   - npm -g install codecov
 script:
   - npm run test-ci
-  - codecov
 
 jobs:
   include:
+    - stage: upload code coverage report
+      node_js: '14'
+      script:
+        - codecov
     - stage: heroku deploy
       node_js: '14'
       deploy:
