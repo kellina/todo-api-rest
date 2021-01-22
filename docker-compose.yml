@@ -10,3 +10,4 @@ services:
       - ./src/scripts/database.sql:/docker-entrypoint-initdb.d/database.sql
     ports:
       - 5433:5432
+    
